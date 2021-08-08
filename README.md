@@ -1,4 +1,4 @@
-# SoundPropagationArtifact
+# Efficient 2D Sound Propagation in Video Games
 Artifacts for the paper "Efficient 2D Sound Propagation in Video Games."
 
 The unity package can be downloaded to use and test the model. <br>
