@@ -1,13 +1,13 @@
 # Efficient 2D Sound Propagation in Video Games
 Artifacts for the paper "Efficient 2D Sound Propagation in Video Games."
 
-The unity package can be downloaded to use and test the model. <br>
+The Unity package can be downloaded to use and test the model. <br>
 The full source code can be found [here](https://github.com/TinSlam/SoundPropagation). <br>
 The demo software showcases the model in multiple minigames. The program is best to be used with headphones.
 
 # Code Instructions
 1. Create or open a Unity 3D project.
-2. Download and import the SoundPropagation unity package. <br>
+2. Download and import the SoundPropagation Unity package. <br>
   I. Choose Assets > Import Package > Custom Package. <br>
   II. Locate the downloaded package "SoundPropagation.unitypackage." <br>
   III. Click import. <br>
