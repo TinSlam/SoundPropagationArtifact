@@ -53,45 +53,45 @@ The inspector can be used to control the model and the geometry.
 A material has the following two properties: Transmission Ratio and Reflection Ratio, which determine the portion of sound that goes through the edge, and the portion of sound that is reflected by the edge. Both are a value between 0 and 1.
 
 `SoundSource > Properties` Game Object
-1. Sound Model Method:
-2. Max Volume:
-3. Amplitude:
-4. Decaying Factor:
-5. Transfer Function Method:
-6. Diffraction:
-7. Decaying Diffraction:
-8. Diffraction Static Caching:
-9. Diffraction Greedy Search:
-10. Diffraction Remove Redundant Corner:
-11. Diffraction Map Partitioning:
-12. Transmission:
-13. Transmission Ray Count:
-14. Reflection:
-15. Reflection Ray Count:
-16. Reflection Bounce Limit:
-17. Reflection Minimum Range Limit:
-18. Reflection Distance Delay Factor:
-19. Audio Clip:
-20. Output Channels:
-21. Volume Based Stereo:
-22. Audio Start Delay:
-23. Reflection Audio Pool Count:
-24. Reflection Maximum Audio Delay:
-25. Visualize:
-26. Visualize Source Position:
-27. Visualize Beacon:
-28. Visualize Range Circle:
-29. Visualize Primary Source:
-30. Visualize Diffraction:
-31. Visualize Transmission:
-32. Visualize All Sound Directions:
-33. Visualize Weighted Sound Directions:
-34. Update Each Frame:
-35. Use Global Transmission Ratio:
-36. Global Transmission Ratio:
-37. Use Global Reflection Ratio:
-38. Global Reflection Ratio:
-39. Point, Line, Circle, Sound Mesh Pool Sizes: 
+1. Sound Model Method: The sound model method to use.
+2. Max Volume: A number between 0 and 1 to scale the output audio.
+3. Amplitude: The amplitude of the source.
+4. Decaying Factor: `pdf` from the paper.
+5. Transfer Function Method: Currently can choose between two different sound propagation function method (equation 2 in paper). Can be easily extended for more options.
+6. Diffraction: Toggles sound diffraction.
+7. Decaying Diffraction: A variation of diffraction in which sound loses more energy the more it bends. (Might be buggy)
+8. Diffraction Static Caching: Caching information for higher-order diffraction sources as an optimization method. (Might be buggy)
+9. Diffraction Greedy Search: An optimization for diffraction. Discussed in paper.
+10. Diffraction Remove Redundant Corner: An optimization for diffraction. Discussed in paper.
+11. Diffraction Map Partitioning: An optimization for model computation. A spatial partitioning method.
+12. Transmission: Toggles sound transmission.
+13. Transmission Ray Count: The number of transmission rays to shoot.
+14. Reflection: Toggles sound reflection.
+15. Reflection Ray Count: The number of reflection rays to shoot.
+16. Reflection Bounce Limit: The maximum number of bounces for a reflection ray.
+17. Reflection Minimum Range Limit: The minimum amplitude required for a ray in order to bounce.
+18. Reflection Distance Delay Factor: The distance factor in computing sound delay in reflection. Corresponds to `rdf` from paper.
+19. Audio Clip: The audio soundclip to play.
+20. Output Channels: Can choose between stereo and mono.
+21. Volume Based Stereo: The stereo sound would be based on both sound direction and sound volume.
+22. Audio Start Delay: An offset for the soundclip to play.
+23. Reflection Audio Pool Count: The number of audio sources to reserve for outputing reflection.
+24. Reflection Maximum Audio Delay: The maximum delay that can be produced by reflection.
+25. Visualize: Toggles visualization.
+26. Visualize Source Position: Visualizes the sound source location.
+27. Visualize Beacon: Provides a better visualization of the sound source location in 3D mode.
+28. Visualize Range Circle: Visualizes the range of the sound source.
+29. Visualize Primary Source: Visualizes the visibility polygon.
+30. Visualize Diffraction: Visualizes the regions coverd by diffraction.
+31. Visualize Transmission: Visualizes the regions covered by transmission.
+32. Visualize All Sound Directions: Visualizes all diffraction/transmission sources toward the listener. (Used for stereo)
+33. Visualize Weighted Sound Directions: Visualizes the final sound direction. (Used for stereo)
+34. Update Each Frame: The sound model is only computed when a parameter is changed. This option would force it to compute on every frame.
+35. Use Global Transmission Ratio: Can be enabled to ignore all surface material of the geometry and use a global value as the transmission ratio.
+36. Global Transmission Ratio: The transmission ratio of each edge in the geometry, if the above option is enabled.
+37. Use Global Reflection Ratio: Can be enabled to ignore all surface material of the geometry and use a global value as the reflection ratio.
+38. Global Reflection Ratio: The reflection ratio of each edge in the geometry, if the above option is enabled.
+39. Point, Line, Circle, Sound Mesh Pool Sizes: A pool of resources to optimize the visualization. If the pool is exhausted, visualization may become slow. Should be specified before run-time.
 
 # Extending the Code
 The class `SoundModelMethod` can be inherited to implement a new sound propagation model by implementing the following functions.
