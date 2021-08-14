@@ -111,4 +111,4 @@ Implementation of the virtual sources can be found in the following files:<br>
 
 The primary source, which runs the algorithms discussed in the paper and creates the virtual sources can be found in `PrimarySoundSource.cs`.
 
-The sound propagation function (equation 2 from the paper) named `transferFunction()` can be modified in `SoundSourceBase`, which is the parent of all sound source classes.
+The sound propagation function (equation 2 from the paper) named `transferFunction()` can be modified in `SoundSourceBase`, which is the parent of all sound source classes. This function determines how sound would travel in the environment.
