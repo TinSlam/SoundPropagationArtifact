@@ -14,7 +14,7 @@ The demo software showcases the model in multiple minigames. The program is best
 3. Add a new layer named "SoundModels." <br>
   I. Choose Layers > Edit Layers... <br>
   II. Pick an empty layer and name it "SoundModels" <br>
-4. You can now run any of the demo scenes.
+4. You can now run any of the demo scenes, which include the ones used in the paper.
 
 # Creating a New Scene
 1. Add the "SoundPropagation" prefab to your scene.
@@ -24,3 +24,17 @@ The demo software showcases the model in multiple minigames. The program is best
       File Name => Directory of the ".map" file downloaded. The path is relative to Assets/Resources/Maps. <br> <br>
   II. You can create custom geometries by adding "SoundObstacle" prefabs as children of the GeometryData game object. <br>
 3. Sound sources can be added using the "SoundSource" prefab.
+
+# Unity Inspector
+The inspector can be used to control the model and the geometry.
+
+# Extending the Code
+The class `SoundModelMethod` can be inherited to implement a new sound propagation model by implementing the following functions.
+1. `ComputeModel`: Builds the sound model that is later used for audio computation.
+2. `ComputeAudio`: Determines the output audio by choosing between stereo/mono, calling `ComputeSound` for the main audio output, etc.
+3. `ComputeSound`: Uses the pre-built sound model to compute the amplitude for a certain listener.
+4. `VisualizeModel`: Visualizes the computed model.
+
+Our model's implementation can be found in the class `OurStaticMethod`, which uses the above functions to compute the model and the sound.
+
+Implementation of the virtual sources can be found in the following files: `DiffractionSource.cs`, `ReflectionSource.cs`, `TransmissionSource.cs`
