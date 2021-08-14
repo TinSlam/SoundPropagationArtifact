@@ -5,7 +5,7 @@ The Unity package can be downloaded to use and test the model. <br>
 The full source code can be found [here](https://github.com/TinSlam/SoundPropagation). <br>
 The demo software showcases the model in multiple minigames. The program is best to be used with headphones.
 
-# Code Instructions
+# Instructions to Use the Package
 1. Create or open a Unity 3D project.
 2. Download and import the SoundPropagation Unity package. <br>
   I. Choose Assets > Import Package > Custom Package. <br>
@@ -16,6 +16,8 @@ The demo software showcases the model in multiple minigames. The program is best
   II. Pick an empty layer and name it "SoundModels" <br>
 4. You can now run any of the demo scenes, which include the ones used in the paper.
 5. In 2D mode, the position of the cursor is the listener. In 3D mode, the position of the 3D character is the listener.
+6. To hear the sound, make sure your computer or your Unity game are not muted.
+7. Hold F1 to open the shortcut controls and the profiler.
 
 # Creating a New Scene
 1. Add the "SoundPropagation" prefab to your scene.
